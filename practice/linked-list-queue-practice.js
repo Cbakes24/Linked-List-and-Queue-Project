@@ -42,7 +42,13 @@ class SinglyLinkedList {
   }
 
   sumOfNodes() {
-    // Returns the sum of the values of all the nodes
+    let current = this.head
+    let total = 0
+    while(current){
+        total += current.value
+        current = current.next
+    }
+    return total
     // Write your hypothesis on the time complexity of this method here
   }
 
