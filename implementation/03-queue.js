@@ -24,7 +24,16 @@ class Queue {
   }
 
   dequeue() {
-    // Remove node from front of queue (linked list)
+    if(!this.head) return null
+    let removeNode = this.head
+    this.head = this.head.next
+    removeNode.next = null
+    if(this.length === 1) {
+      this.head = null
+      this.tail = null
+    }
+    this.length--
+    return removeNode.value
     // Write your hypothesis on the time complexity of this method here
   }
 }
