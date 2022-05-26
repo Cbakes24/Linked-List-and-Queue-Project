@@ -67,18 +67,26 @@ class SinglyLinkedList {
   }
 
   findNthNode(n) {
-    if(n < 0 || n >= this.length) return undefined
-    let counter = 0
-    let current = this.head
-    while(counter !== n) {
-        current = current.next
-        counter++
+    if (n < 0 || n >= this.length) return undefined;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== n) {
+      current = current.next;
+      counter++;
     }
-    return current
+    return current;
     // Write your hypothesis on the time complexity of this method here
   }
 
   findMid() {
+    let array = [];
+    let current = this.head;
+    while (current) {
+      array.push(current);
+      current = current.next;
+    }
+    let mid = array.length / 2;
+    console.log(this.findNthNode(mid));
     // Returns the middle node
     // Implement this as a singly linked list then as a doubly linked list
     // How do the implementation for singly and doubly vary if at all?
@@ -95,7 +103,11 @@ class SinglyLinkedList {
     // Write your hypothesis on the time complexity of this method here
   }
 }
-
+let list = new SinglyLinkedList();
+list.addToTail(1);
+list.addToTail(2);
+list.addToTail(3);
+list.findMid();
 class DoublyLinkedNode {
   constructor(val) {
     this.value = val;
