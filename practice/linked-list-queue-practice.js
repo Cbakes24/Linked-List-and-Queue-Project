@@ -67,7 +67,14 @@ class SinglyLinkedList {
   }
 
   findNthNode(n) {
-    // Returns the node at the nth index from the head
+    if(n < 0 || n >= this.length) return undefined
+    let counter = 0
+    let current = this.head
+    while(counter !== n) {
+        current = current.next
+        counter++
+    }
+    return current
     // Write your hypothesis on the time complexity of this method here
   }
 
