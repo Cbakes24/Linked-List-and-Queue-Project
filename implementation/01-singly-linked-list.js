@@ -46,16 +46,31 @@ class SinglyLinkedList {
   }
 
   removeFromHead() {
-    if(!this.head) return undefined
-    let current = this.head
-    this.head = current.next
-    this.length--
-    return current
+    if (!this.head) return undefined;
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
+    return current;
     // Write your hypothesis on the time complexity of this method here
   }
 
   removeFromTail() {
-    // Remove node at tail
+    if (!this.head) return undefined;
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
     // Write your hypothesis on the time complexity of this method here
   }
 
