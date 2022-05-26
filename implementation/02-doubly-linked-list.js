@@ -21,15 +21,15 @@ class DoublyLinkedList {
         // Add node of val to head of linked list
         let newNode = new DoublyLinkedNode(val);
 
-        if (this.length >= 0) {
-            this.head.previous = newNode;
+        if (this.length > 0) {
+            this.head.prev = newNode;
             newNode.next = this.head;
             this.head = newNode;
         } else {
-            this.head = newNode;
+
             this.tail = newNode;
         }
-
+        this.head = newNode;
         this.length++;
     }
 
@@ -59,7 +59,7 @@ class DoublyLinkedList {
 
     peekAtTail() {
         // Return value of tail node
-        
+
         // Write your hypothesis on the time complexity of this method here
     }
 }
